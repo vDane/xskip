@@ -711,15 +711,6 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
-client.on('message', message => {
-if(message.content === '-news') {
-     let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('     ** Update ** ' ,' **New Desgiend For Command Help** ')
-.setColor('#7d2dbe')
-  message.channel.sendEmbed(embed);
-    }
-});
 
 client.on('message' , message => {
 if(message.content === '+help') {
