@@ -800,17 +800,15 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
-client.on('message' , news => {
-let embed = new Discord.RichEmbed()
-if(news.content === '-news') {
-news.author.send(`
-***__اخر تحديثات البوت__***
-**
-Nothing
-**
-`);
-}
-})
+client.on('message', message => {
+            if (message.content.startsWith(prefix + "test")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     ** code print ** ' ,' *تم اضافة كود ** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
