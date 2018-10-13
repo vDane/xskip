@@ -777,7 +777,7 @@ client.on('message', news => {
 if(news.content === '-news') {
      let embed = new Discord.RichEmbed()
 .setThumbnail(news.author.avatarURL)
-.addField('     ** Update ** ' ,' **New Desgiend For Command Help** ')
+.addField('     ** Update ** ' ,' **Nothing** ')
 .setColor('#7d2dbe')
   news.channel.sendEmbed(embed);
     }
