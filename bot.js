@@ -801,6 +801,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 
 client.on('message' , news => {
+let embed = new Discord.RichEmbed()
 if(news.content === '-news') {
 news.author.send(`
 ***__اخر تحديثات البوت__***
