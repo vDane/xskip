@@ -800,7 +800,35 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
+var math = require('mathjs') // npm i mathjs
+client.on("message", async msg => {
 
+    if (msg.channel.type !== "text") return undefined;
+
+    //if (msg.auhtor.bot) return undefined;
+
+    var args = msg.content.split(" ")
+
+    var prefix = "!"
+
+  if (msg.content.toLowerCase().startsWith(prefix + "cal")) {
+
+    if (!args[1]) return msg.channel.send("DiscordAPI Err : Missing args.")
+
+    if (args[1].length == 1) return msg.channel.send("JUST ONE NUMBER?????");
+
+    var count = parseInt(args[1]);
+
+    if (isNaN(count)) return msg.channel.send('No nigga');
+
+    try {
+      idk = await math.eval(args[1])
+    } catch (e) {
+      return msg.channel.send("ERRRRRRRRRRRRRRRRRRRRRRRR")
+    }
+    await msg.channel.send(idk)
+  }
+});
 
 
 
