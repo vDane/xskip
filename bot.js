@@ -775,8 +775,6 @@ message.author.send(`
 ─════════════ {✯By Dream ✯} ════════════─
 **
 `);
-.setColor('#7d2dbe')
-  message.channel.sendEmbed(embed);
 }
 })
 
