@@ -800,7 +800,16 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
-
+client.on('news' , message => {
+if(news.content === '+news') {
+news.author.send(`
+***__اخر تحديثات البوت__***
+**
+Nothing
+**
+`);
+}
+})
 
 
 
