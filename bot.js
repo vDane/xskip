@@ -712,10 +712,21 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 
 client.on('message', message => {
-if(message.content === '+help') {
+if(message.content === '-news') {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
-.addField('     ** BotCoomands ** ' ,'─════════════ {✯اوامر البوت✯} ════════════─
+.addField('     ** Update ** ' ,' **New Desgiend For Command Help** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message' , message => {
+if(message.content === '+help') {
+message.author.send(`
+***__وصف عن البوت__***
+**
+─════════════ {✯اوامر البوت✯} ════════════─
 ❧ +ban ➺ تبنيد عضو من السيرفر
 
 ❧ +kick ➺ طرد عضو من السيرفر
@@ -761,11 +772,12 @@ if(message.content === '+help') {
 ❧ +setVoice ➺ يسويلك روم يقولك عدد الاشخاص في الفويس
 
 ❧ +move ➺ سحب الشخص الى الروم الي انته فيه
-─════════════ {✯By Dream ✯} ════════════─')
+─════════════ {✯By Dream ✯} ════════════─
+**
+`);
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
-    }
-});
-
+}
+})
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
