@@ -769,7 +769,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 
 client.on('message', message => {
-if(message.content === '+help') {
+if(message.content === '+test') {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
 .addField('     ** Update ** ' ,' *Nothing ** ')
