@@ -767,14 +767,5 @@ if(message.content === '+help') {
     }
 });
 
-client.on('message', news => {
-if(news.content === '-news') {
-     let embed = new Discord.RichEmbed()
-.setThumbnail(news.author.avatarURL)
-.addField('     ** Update ** ' ,' **New Desgiend For Command Help** ')
-.setColor('#7d2dbe')
-  news.channel.sendEmbed(embed);
-    }
-});
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
