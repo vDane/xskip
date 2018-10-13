@@ -223,36 +223,6 @@ if(message.content === '+help') {
 message.author.send(`
 ***__وصف عن البوت__***
 **
-『+bc/لارسال رسالة الى جميع اعضاء السيرفر』
-『+id/لعرض معلوماتك』
-『+server/عرض معلومات عن السيرفر』
-『+link/اعطاء العضو رابط للسيرفر』
-『+clear/مسح الشات』
-『+marry/لعبة زواج』
-『+mute/اعطاء عضو ميوت』
-『+unmute/فك ميوت』
-『+ban/اعطاء العضو باند من السيرفر』
-『+unban/فك الباند من عضو』
-『+kick/طرد عضو من السيرفر』
-『+bot/عرض معلومات البوت』
-『+move all/سحب الكل الى الروم الصوتي』
-『+kf/اعطاء العضو كف』
-『+e/كتابة كلامك ب ايموجي』
-『+short/يختصرلك رابط كبير الى رابط صغير』
-『+mc/يقفل الروم』
-『+umc/يفتح الروم』
-『+say/اكتب بعده كلام يحذف كلامك ويكتبه هو』
-『+owner/حساب مطور البوت』
-『+hacked/لعبة الهكر』
-『+sra7a/لعبة صراحة』
-『+Send/البوت يرسل رسالة لشخص تحدده بمنشن』
-『+lo5erok/لعبة لوخيروك』
-『+contact/تواصل مع مطور البوت』
-『+avatar/يعرض صورة ملفك الشخصي』
-『+ct/يقوم بانشاء روم كتابي』
-『+cv/يقوم بانشاء روم صوتي』
-『+setVoice/يقوم بأنشاء روم يقولك كم واحد اونلاين فويس』
-
 ─════════════ {✯اوامر البوت✯} ════════════─
 ❧ +ban ➺ تبنيد عضو من السيرفر
 
@@ -299,6 +269,8 @@ message.author.send(`
 ❧ +setVoice ➺ يسويلك روم يقولك عدد الاشخاص في الفويس
 
 ❧ +move ➺ سحب الشخص الى الروم الي انته فيه
+
+❧ -news ➺ اخر تحديثات البوت
 ─════════════ {✯By Dream ✯} ════════════─
 **
 `);
@@ -801,7 +773,15 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 
 
-
+client.on('message', news => {
+if(news.content === '-news') {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(news.author.avatarURL)
+.addField('     ** Update ** ' ,' **New Desgiend For Command Help** ')
+.setColor('#7d2dbe')
+  news.channel.sendEmbed(embed);
+    }
+});
 
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
