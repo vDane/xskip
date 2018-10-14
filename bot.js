@@ -270,6 +270,8 @@ message.author.send(`
 
 ❧ +move ➺ سحب الشخص الى الروم الي انته فيه
 
+❧ +fast ➺ لعبة اسرع
+
 ❧ -news ➺ اخر تحديثات البوت
 ─════════════ {✯By Dream ✯} ════════════─
 **
@@ -771,7 +773,7 @@ client.on('message', news => {
 if(news.content === '-news') {
      let embed = new Discord.RichEmbed()
 .setThumbnail(news.author.avatarURL)
-.addField('     ** Update ** ' ,' **Nothing** ')
+.addField('     ** Update ** ' ,' **+fast** ')
 .setColor('#7d2dbe')
   news.channel.sendEmbed(embed);
     }
