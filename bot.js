@@ -851,7 +851,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Chyper +help`,"http://twitch.tv/Cypher Bot")
+client.user.setGame(`+help | ${client.guilds.size} servers`,"http://twitch.tv/Cypher Bot")
 client.user.setStatus("dnd")
 });
 
