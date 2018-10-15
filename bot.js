@@ -217,7 +217,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 });
 
 client.on('message' , message => {
-if(message.content === '+help') {
+if(message.content === '^help') {
   var EsTeKnAN = new Discord.RichEmbed()
   .setColor('RANDOM')
 message.author.send(`
@@ -857,7 +857,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`^help | ${client.guilds.size} servers`,"http://twitch.tv/Cypher Bot")
+client.user.setGame(`^help | ${client.guilds.size} ${client.user.size} servers/user`,"http://twitch.tv/Cypher Bot")
 client.user.setStatus("dnd")
 });
 
