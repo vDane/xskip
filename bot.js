@@ -224,61 +224,61 @@ message.author.send(`
 ***__وصف عن البوت__***
 **
 ─════════════ {✯اوامر البوت✯} ════════════─
-❧ +ban ➺ تبنيد عضو من السيرفر
+❧ ^ban ➺ تبنيد عضو من السيرفر
 
-❧ +kick ➺ طرد عضو من السيرفر
+❧ ^kick ➺ طرد عضو من السيرفر
 
-❧ +mute ➺ كتم العضو
+❧ ^mute ➺ كتم العضو
 
-❧ +unmute ➺ فك الميوت
+❧ ^unmute ➺ فك الميوت
 
-❧ +bc ➺ رسالة جماعية لاعضاء السيرفر
+❧ ^bc ➺ رسالة جماعية لاعضاء السيرفر
 
-❧ +link ➺ رابط السيرفر
+❧ ^link ➺ رابط السيرفر
 
-❧ +clear ➺ مسح الرسائل من المحادثة
+❧ ^clear ➺ مسح الرسائل من المحادثة
 
-❧ +marry ➺ لعبة زواج
+❧ ^marry ➺ لعبة زواج
 
-❧ +kf ➺ كف
+❧ ^kf ➺ كف
 
-❧ +mc ➺ قفل الروم
+❧ ^mc ➺ قفل الروم
 
-❧ +umc ➺ فتح الروم
+❧ ^umc ➺ فتح الروم
 
-❧ +say ➺ البوت يكرر كلام انته تكتبه
+❧ ^say ➺ البوت يكرر كلام انته تكتبه
 
-❧ +Owner ➺ مطور البوت
+❧ ^Owner ➺ مطور البوت
 
-❧ +Send ➺ ارسال رسالة الى شخص من البوت
+❧ ^Send ➺ ارسال رسالة الى شخص من البوت
 
-❧ +hacked ➺ لعبة التهكير
+❧ ^hacked ➺ لعبة التهكير
 
-❧ +apply ➺ تقديم لازم يكون في روم اسمه التقديمات
+❧ ^apply ➺ تقديم لازم يكون في روم اسمه التقديمات
 
-❧ +report ➺ روم التبليغ لازم يكون في روم اسمه reports
+❧ ^report ➺ روم التبليغ لازم يكون في روم اسمه reports
 
-❧ +contact ➺ تواصل مع مطور البوت
+❧ ^contact ➺ تواصل مع مطور البوت
 
-❧ +bans ➺ معرفة عدد الاشخاص المبندين من السيرفر
+❧ ^bans ➺ معرفة عدد الاشخاص المبندين من السيرفر
 
-❧ +cv ➺ انشاء روم صوتي
+❧ ^cv ➺ انشاء روم صوتي
 
-❧ +ct ➺ انشاء روم كتابي
+❧ ^ct ➺ انشاء روم كتابي
 
-❧ +setVoice ➺ يسويلك روم يقولك عدد الاشخاص في الفويس
+❧ ^setVoice ➺ يسويلك روم يقولك عدد الاشخاص في الفويس
 
-❧ +move ➺ سحب الشخص الى الروم الي انته فيه
+❧ ^move ➺ سحب الشخص الى الروم الي انته فيه
 
-❧ +fast ➺ لعبة اسرع
+❧ ^fast ➺ لعبة اسرع
 
-❧ +fkk ➺ لعبة فكك
+❧ ^fkk ➺ لعبة فكك
 
-❧ +puz ➺ لعبة الغاز
+❧ ^puz ➺ لعبة الغاز
 
-❧ -news ➺ اخر تحديثات البوت
+❧ ^news ➺ اخر تحديثات البوت
 
-❧ +invite ➺ لاضافة البوت
+❧ ^invite ➺ لاضافة البوت
 ─════════════ {✯By Dream ✯} ════════════─
 **
 `);
@@ -316,7 +316,7 @@ if (message.content === '+owner') {
 
 
    
-const perfix = '+';
+const perfix = '^';
 client.on('message', msg => {
  if (msg.content.startsWith(prefix + 'Send')) {
       let args = msg.content.split(' ').slice(1)
@@ -335,7 +335,7 @@ client.on('message', msg => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("+hacked")) {
+    if (message.content.startsWith("^hacked")) {
       if (message.author.bot) return
            message.delete();
              let args = message.content.split(' ').slice(1);
@@ -422,7 +422,7 @@ client.on('message', message =>{
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let prefix = '+';
+    let prefix = '^';
      
     if(cmd === `${prefix}report`){
         let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -451,7 +451,7 @@ client.on('message', message =>{
 
 
 client.on('message' , message => {
-var prefix = "+"
+var prefix = "^"
 
 if (message.author.bot) return;
 if (message.content.startsWith(prefix + "contact")) {
@@ -488,7 +488,7 @@ message.channel.send(embed);
 
 client.on('message', message =>{
     let args = message.content.split(' ');
-    let prefix = '+'; //تقدر تغير البرفكس
+    let prefix = '^'; //تقدر تغير البرفكس
     
     if(args[0] === `${prefix}avatar`){
         let mentions = message.mentions.members.first()
@@ -510,7 +510,7 @@ client.on('message', message =>{
     };
 });
 client.on('message', message => {
-    if (message.content.startsWith("+bans")) {
+    if (message.content.startsWith("^bans")) {
         message.guild.fetchBans()
         .then(bans => message.channel.send(`${bans.size} عدد اشخاص المبندة من السيرفر `))
   .catch(console.error);
@@ -519,7 +519,7 @@ client.on('message', message => {
 
 
 client.on("message", (message) => {
-if (message.content.startsWith("+ct")) {
+if (message.content.startsWith("^ct")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'text');
@@ -528,7 +528,7 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 }
 });
 client.on("message", (message) => {
-if (message.content.startsWith("+cv")) {
+if (message.content.startsWith("^cv")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'voice');
@@ -558,7 +558,7 @@ client.on('message',async message => {
   
   
 client.on('message', message => {
-    var prefix = "+";
+    var prefix = "^";
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
@@ -620,7 +620,7 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
  
  
 client.on('message', message => {
-const prefix = "+";
+const prefix = "^";
   if (message.author.kick) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -776,7 +776,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 
 client.on('message', news => {
-if(news.content === '-news') {
+if(news.content === '^news') {
      let embed = new Discord.RichEmbed()
 .setThumbnail(news.author.avatarURL)
 .addField('     ** Update ** ' ,' **2 Games +puc and +fkk** ')
@@ -786,7 +786,7 @@ if(news.content === '-news') {
 });
 
 client.on('message', message => {
-    if (message.content == "+fast") {
+    if (message.content == "^fast") {
         var x = ["DreamKing",
 "DeathGames",
 "زيرو كنج",
@@ -857,13 +857,13 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`+help | ${client.guilds.size} servers`,"http://twitch.tv/Cypher Bot")
+client.user.setGame(`^help | ${client.guilds.size} servers`,"http://twitch.tv/Cypher Bot")
 client.user.setStatus("dnd")
 });
 
 
 client.on('message', fkk => {
-    if (fkk.content == "+fkk") {
+    if (fkk.content == "^fkk") {
         var x = ["المتاح للجميع لا يتاح لي",
 "خعاخع",
 "فيلا",
@@ -914,7 +914,7 @@ client.on('message', fkk => {
 })
 
 client.on('message', puz => {
-    if (puz.content == "+puz") {
+    if (puz.content == "^puz") {
         var x = ["ما هي حاسة الشم عند الثعبان ؟",
 "ما هو الشي الذي يكسو الناس و هو عار بدون ملابس ؟",
 "ما هو الشي الذي لا يجري و لا يمشي ؟",
@@ -965,7 +965,7 @@ client.on('message', puz => {
 })
 
 client.on('message' , invite => {
-if(invite.content === '+invite') {
+if(invite.content === '^invite') {
   var EsTeKnAN = new Discord.RichEmbed()
   .setColor('RANDOM')
 invite.author.send(`
