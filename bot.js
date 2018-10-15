@@ -974,6 +974,7 @@ invite.author.send(`
 https://discordapp.com/oauth2/authorize?client_id=500630209985380352&permissions=1043721343&scope=bot
 **
 `);
+  message.channel.send("**تم ارسال الرابط برسالة خاصة**")
 }
 })
 
