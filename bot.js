@@ -272,7 +272,13 @@ message.author.send(`
 
 ❧ +fast ➺ لعبة اسرع
 
+❧ +fkk ➺ لعبة فكك
+
+❧ +puz ➺ لعبة الغاز
+
 ❧ -news ➺ اخر تحديثات البوت
+
+❧ +invite ➺ لاضافة البوت
 ─════════════ {✯By Dream ✯} ════════════─
 **
 `);
@@ -773,7 +779,7 @@ client.on('message', news => {
 if(news.content === '-news') {
      let embed = new Discord.RichEmbed()
 .setThumbnail(news.author.avatarURL)
-.addField('     ** Update ** ' ,' **+fast** ')
+.addField('     ** Update ** ' ,' **2 Games +puc and +fkk** ')
 .setColor('#7d2dbe')
   news.channel.sendEmbed(embed);
     }
@@ -856,5 +862,119 @@ client.user.setStatus("dnd")
 });
 
 
+client.on('message', fkk => {
+    if (fkk.content == "+fkk") {
+        var x = ["المتاح للجميع لا يتاح لي",
+"خعاخع",
+"فيلا",
+"بريء",
+"بسم الله الرحمن الرحيم",
+"الضرورة",
+"دنيا",
+"صارم",
+"مات",
+"شعبان شبعان",
+"ألعراق",
+];
+        var x2 = ['ا ل م ت ا ح ل ل ج م ي ع ل ا ي ت ا ح ل ى',
+		"خ ع ا خ ع",
+        "ف ي ل ا",
+		"ب ر ي ء",
+		"ب س م ا ل ل ه ا ل ر ح م ن ا ل ر ح ي م",
+		"ا ل ض ر و ر ة",
+		"د ن ي ا",
+		"ص ا ر م",
+		"م ا ت",
+		"ش ع ب ا ن ش ب ع ا ن",
+		"أ ل ع ر ا ق",
+        
+        
+        
+        
+        ];
+        
+        var x3 = Math.floor(Math.random()*x.length)
+        fkk.channel.send(` اول شخص يفكك :  __**${x[x3]}**__
+لديك 15 ثانية للاجابة`).then(msg1=> {
+            var r = fkk.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 15000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return fkk.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            الإجآبة الصحيحةة هي __**${x2[x3]}**__`)
+        })
+        
+        r.then((collected)=> {
+            fkk.channel.send(`${collected.first().author} لقد قمت بتفكيك الجملة في الوقت المناسب  `);
+        })
+        })
+    }
+})
+
+client.on('message', puz => {
+    if (puz.content == "+puz") {
+        var x = ["ما هي حاسة الشم عند الثعبان ؟",
+"ما هو الشي الذي يكسو الناس و هو عار بدون ملابس ؟",
+"ما هو الشي الذي لا يجري و لا يمشي ؟",
+"ما هو إسم الشهر الميلادي الذي إذا حذفت أوله , تحول إلى إسم فاكهه ؟",
+"ما هو الشي الذي لا يدخل الإ إذا ضرب على رأسه ؟",
+"ما هو الشيء الذي اسمه على لونه ؟",
+"ما هو الشي الذي كلما زاد نقص ؟",
+"ما هي التي تحرق نفسها لتفيد غيرها ؟",
+"كله ثقوب و مع ذلك يحفظ الماء ؟",
+"ما هو الذي لحمه من الداخل و عظمه من الخارج ؟",
+"يستطيع ان يخترق الزجاج من دون كسره .. فما هو ؟",
+];
+        var x2 = ['اللسان',
+		"الابره",
+        "الماء",
+		"تموز",
+		"المسمار",
+		"البيضة",
+		"العمر",
+		"الشمعة",
+		"الاسفنج",
+		"السلحفاة",
+		"الضوء",
+        
+        
+        
+        
+        ];
+        
+        var x3 = Math.floor(Math.random()*x.length)
+        puz.channel.send(` اول شخص يفكك :  __**${x[x3]}**__
+لديك 20 ثانية للاجابة`).then(msg1=> {
+            var r = puz.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 20000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return puz.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            `)
+        })
+        
+        r.then((collected)=> {
+            puz.channel.send(`${collected.first().author} لقد قمت بحل اللغز في الوقت المناسب  `);
+        })
+        })
+    }
+})
+
+client.on('message' , invite => {
+if(invite.content === '+invite') {
+  var EsTeKnAN = new Discord.RichEmbed()
+  .setColor('RANDOM')
+invite.author.send(`
+**
+رابط دعوة البوت
+https://discordapp.com/oauth2/authorize?client_id=500630209985380352&permissions=1043721343&scope=bot
+**
+`);
+}
+})
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
