@@ -974,20 +974,6 @@ https://discordapp.com/oauth2/authorize?client_id=500630209985380352&permissions
 }
 })
 
-client.on('guildCreate', guild => {
-  client.channels.get("502397630790500352").send(✅ **تم اضافة البوت في سيرفر جديد مبروكك
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**)
-});
 
-client.on('guildDelete', guild => {
-  client.channels.get("502397630790500352").send(❎ **طردوني حرام والله ايش سويت انا
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**)
-});
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
