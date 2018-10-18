@@ -50,7 +50,7 @@ msg.delete();
 });
 
   client.on('message', message => {
-    if(message.content.includes('491734578671779840')){
+    if(message.content.includes('501395514408042508')){
                                             if(!message.channel.guild) return message.reply('** advertising me on DM ? ??   **');
         if (!message.member.hasPermissions(['ADMINISTRATOR'])){
         message.delete()
@@ -60,7 +60,7 @@ msg.delete();
 });
 
   client.on('message', message => {
-    if (message.content.startsWith("+Link")) {
+    if (message.content.startsWith("^Link")) {
 
   message.channel.createInvite({
         thing: true,
@@ -80,7 +80,7 @@ message.author.send(`**مدة الرابط : يـوم
   
   
 client.on('message', function(message) {
-    if (message.content == "+clear") {
+    if (message.content == "^clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -93,7 +93,7 @@ client.on('message', function(message) {
   
   
 client.on('message', function(msg) {
-    const prefix = '+'
+    const prefix = '^'
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
@@ -119,7 +119,7 @@ var definedReactionRole = null;
 
 
   client.on('message', message => {
-      if(message.content.startsWith ("+marry")) {
+      if(message.content.startsWith ("^marry")) {
       if(!message.channel.guild) return message.reply('** This command only for servers **')
       var proposed = message.mentions.members.first()
      
@@ -154,7 +154,7 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
  
   
 client.on('message',  (message) => {
-        if(message.content.startsWith('+kf')) {
+        if(message.content.startsWith('^kf')) {
   let user = message.mentions.users.first();
   if (!user) {
 
@@ -189,7 +189,7 @@ client.on('message',  (message) => {
 
 client.on('message', message => {
 
-    if (message.content === "+mc") {
+    if (message.content === "^mc") {
                         if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -305,7 +305,7 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
  });
 
 client.on('message' , message => {
-if (message.content === '+owner') {
+if (message.content === '^owner') {
          let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
       .addField("مطور البوت ومعدله ! ɒ̅я̅є̅α̅м ,#9999")
@@ -977,6 +977,20 @@ https://discordapp.com/oauth2/authorize?client_id=500630209985380352&permissions
 }
 })
 
+client.on('guildCreate', guild => {
+  client.channels.get("502397630790500352").send(✅ **تم اضافة البوت في سيرفر جديد مبروكك
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**)
+});
 
+client.on('guildDelete', guild => {
+  client.channels.get("502397630790500352").send(❎ **طردوني حرام والله ايش سويت انا
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**)
+});
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
