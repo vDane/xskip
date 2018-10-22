@@ -2,10 +2,10 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix = "^";
      client.on('message' , message => {
-          var prefix = "+";
+          var prefix = "^";
           if(message.author.bot) return;
          
-          if(message.content.startsWith(prefix + "rolebc")) {
+          if(message.content.startsWith(prefix + "bcc")) {
             if (!message.member.hasPermission("ADMINISTRATOR"))  return;
             let args = message.content.split(" ").slice(1);
          
