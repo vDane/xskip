@@ -884,7 +884,7 @@ client.on('message', fkk => {
         ];
         
         var x3 = Math.floor(Math.random()*x.length)
-        fkk.channel.send(` اول شخص يفكك :  __**${x[x3]}**__
+        fkk.channel.send(` اول شخص يحل اللغز :  __**${x[x3]}**__
 لديك 15 ثانية للاجابة`).then(msg1=> {
             var r = fkk.channel.awaitMessages(msg => msg.content == x2[x3], {
                 maxMatches : 1,
@@ -897,7 +897,7 @@ client.on('message', fkk => {
         })
         
         r.then((collected)=> {
-            fkk.channel.send(`${collected.first().author} لقد قمت بتفكيك الجملة في الوقت المناسب  `);
+            fkk.channel.send(`${collected.first().author} لقد قمت بحل اللغز الجملة في الوقت المناسب  `);
         })
         })
     }
