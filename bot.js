@@ -1306,17 +1306,19 @@ client.on('message', message => {
     }
 });
 
-client.on('message', msg => { 
-      if (msg.content.startsWith(`^اقتراح`)) {
-         let args = msg.content.split(" ").slice(1);
-        if (!args[1]) return msg.reply(`يجب كتابه الاقتراح`)
-        if (msg.guild.channels.find('name', 'sug')) {
-          msg.guild.channels.find('name', 'sugg').send(`
-        الاقتراح من : ${msg.member}
-        الاقتراح : **${args.join(" ").split(msg.mentions.members.first()).slice(' ')}**
-        `)
-        }
-      }
-      })
+  client.on('message', async message => {
+  if(message.content.startsWith(prefix + "اقتراح")) {
+  await  message.channel.send(`اكتب اقتراحك الان`)
+      var text = '';
+        let sugsa = message.channel.awaitMessages(m => m.author.id === message.author.id, { max: 1, time: 60000})
+          .then(co => {
+            text = co.first().content
+              message.channel.send(`تم حفظ اقتراحك الرجاء انتضار الرد من قبل الاداره`)
+                client.channels.get("505658330400948224").send(`${message.author.username}'s sug => ${text}`)
+
+              })
+            }
+          });
+
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
