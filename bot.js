@@ -1306,5 +1306,17 @@ client.on('message', message => {
     }
 });
 
+client.on('message', msg => { 
+      if (msg.content.startsWith(`^اقتراح`)) {
+         let args = msg.content.split(" ").slice(1);
+        if (!args[1]) return msg.reply(`يجب كتابه الاقتراح`)
+        if (msg.guild.channels.find('name', 'sug')) {
+          msg.guild.channels.find('name', 'sugg').send(`
+        الاقتراح من : ${msg.member}
+        الاقتراح : **${args.join(" ").split(msg.mentions.members.first()).slice(' ')}**
+        `)
+        }
+      }
+      })
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
