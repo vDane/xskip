@@ -1337,7 +1337,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.content === "-roles") {
+    if (message.content === "^roles") {
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -1345,5 +1345,15 @@ client.on('message', message => {
         message.channel.sendEmbed(embed);
     }
 });
-
+ client.on('message' , message => {
+  var prefix = "^";
+  if(message.author.bot) return;
+  if(message.content.startsWith(prefix + "ping")) {
+ message.channel.send('Pong...').then((msg) => {
+      msg.edit(`\`\`\`javascript\nTime taken: ${msg.createdTimestamp - message.createdTimestamp} ms.\nDiscord API: ${Math.round(client.ping)} ms.\`\`\``);
+ })
+  }  
+ });
+ 
+ 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
