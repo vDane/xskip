@@ -1314,7 +1314,7 @@ client.on('message', message => {
           .then(co => {
             text = co.first().content
               message.channel.send(`تم حفظ اقتراحك الرجاء انتضار الرد من قبل الاداره`)
-                client.channels.get("505658330400948224").send(`${message.author.username}'s sug => ${text}`)
+                client.channels.get("505658330400948224").send(`${message.author.username} الاقتراح => ${text}`)
 
               })
             }
