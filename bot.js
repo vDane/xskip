@@ -1320,5 +1320,19 @@ client.on('message', message => {
             }
           });
 
+  client.on('message', message => {
+    if (message.content === "^rooms") {
+                      if (!message.guild) return;
+
+        var channels = message.guild.channels.map(channels => `${channels.name}, `).join(' ')
+        const embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .addField(`${message.guild.name}`,`**Rooms:white_check_mark:**`)
+        .addField(':arrow_down: Rooms Number. :heavy_check_mark:',`** ${message.guild.channels.size}**`)
+        
+.addField(':arrow_down:Rooms  Name. :heavy_check_mark::',`**[${channels}]**`)
+        message.channel.sendEmbed(embed);
+    }
+});
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
