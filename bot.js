@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const client = new Discord.Client();
 var prefix = "^";
 client.on('message', message => { // Leaked by [ @M3a4x ]
    if(!message.channel.guild) return;
@@ -983,8 +984,6 @@ const ytdl = require('ytdl-core');
 const fs = require('fs');
 
 const gif = require("gif-search");
-
-const client = new Discord.Client({disableEveryone: true});
 
 const prefix = "^";
 /////////////////////////
