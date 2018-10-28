@@ -840,7 +840,6 @@ client.on('message', message => {
     }
 })
 
-const developers = ["472413769700474901","",""]
 const adminprefix = "^";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
