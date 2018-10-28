@@ -840,7 +840,8 @@ client.on('message', message => {
     }
 })
 
-const adminprefix = "^";
+const developers = ["ايدي حقك","",""]
+const adminprefix = "البريفكس";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
