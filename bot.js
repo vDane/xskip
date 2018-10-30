@@ -840,34 +840,27 @@ client.on('message', message => {
     }
 })
 
-client.on('message', message => {
-    var prefix = "^";
-      if (!message.content.startsWith(prefix)) return;
-      var args = message.content.split(' ').slice(1);
-      var argresult = args.join(' ');
-      if (message.author.id == 472413769700474901) return;
+
+client.on("ready", () => {
+    client.user.setPresence({
+      status: 'dnd',
+      game: { 
+         type: 0,
+         name: 'Surprise Mother Fucker :) ',
+         details: `Dream`,
+         url: 'http://twitch.tv/Streammingg',
+         state: `إنْ لَمْ تَجِد لكْ حآقدْ إعلمْ أنْك إنسآن فآشِلْ`,
+        application_id: '506741233897701396',
+         assets: {
+            small_image: `506740946365317131`,
+            small_text: ' Take This ! ' ,
+            large_image: `506740946365317131`,
+            large_text: `IQ FOREVER ♥` }
     
-    if (message.content.startsWith(prefix + 'playing')) {
-      client.user.setGame(argresult);
-        message.channel.sendMessage(`**${argresult}** : Status changed`)
-    } else
-    
-    if (message.content.startsWith(prefix + 'Stream')) {
-      client.user.setGame(argresult, "https://www.twitch.tv/ChampionBot");
-        message.channel.sendMessage(`**${argresult}** :The bot stream has been changed`)
-    } else
-    
-    if (message.content.startsWith(prefix + 'name')) {
-      client.user.setUsername(argresult).then
-          message.channel.sendMessage(`**${argresult}** : Name changed`)
-      return message.reply("**You**");
-    } else
-    if (message.content.startsWith(prefix + 'image')) {
-      client.user.setAvatar(argresult);
-        message.channel.sendMessage(`**${argresult}** : The bot image has been changed`);
-    
-    }
+      }
+        });
     });
+    
 
 client.on('message', fkk => {
     if (fkk.content == "^fkk") {
