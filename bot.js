@@ -1392,7 +1392,7 @@ client.on('message', function(message) {
            if(!message.channel.guild) return message.reply('** This command only for servers**');
      message.member.addRole(message.guild.roles.find('name', 'Muted')); 
     const embed500 = new Discord.RichEmbed()
-      .setTitle(":x: | تمت معاقبتك")
+      .setTitle(":x: | تم اعطاءك ميوت كتاب")
             .addField(`** لقد قمت بمخالفة قوانين السيرفر من خلال نشر سيرفرات اخرى  **` , `**ملاحظة  : إن كآن هذآ الميوت عن طريق الخطأ تكلم مع الادآرة**`)
       .addField(`by`,`Dream`)
             .setColor("c91616")
@@ -1407,6 +1407,13 @@ client.on('message', function(message) {
 })
 
 
-
+client.on('message',function(message) {
+    if(!message.channel.guild) return undefined;
+    const swearWords = ["قحبة","زق","حيوان","كلب"];
+    if (swearWords.some(word => message.content.includes(word)) ) {
+      message.delete()
+      message.reply("**ممنوع السب**"); 
+    }
+  });
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
