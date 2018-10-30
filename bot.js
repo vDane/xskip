@@ -840,16 +840,34 @@ client.on('message', message => {
     }
 })
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : EX Clan`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`^help | ${client.guilds.size} ${client.users.size} servers/user`,"http://twitch.tv/Cypher Bot")
-client.user.setStatus("dnd")
-});
+client.on('message', message => {
+    var prefix = "^";
+      if (!message.content.startsWith(prefix)) return;
+      var args = message.content.split(' ').slice(1);
+      var argresult = args.join(' ');
+      if (message.author.id == 410052613996937217) return;
+    
+    if (message.content.startsWith(prefix + 'playing')) {
+      client.user.setGame(argresult);
+        message.channel.sendMessage(`**${argresult}** : Status changed`)
+    } else
+    
+    if (message.content.startsWith(prefix + 'Stream')) {
+      client.user.setGame(argresult, "https://www.twitch.tv/ChampionBot");
+        message.channel.sendMessage(`**${argresult}** :The bot stream has been changed`)
+    } else
+    
+    if (message.content.startsWith(prefix + 'name')) {
+      client.user.setUsername(argresult).then
+          message.channel.sendMessage(`**${argresult}** : Name changed`)
+      return message.reply("**You**");
+    } else
+    if (message.content.startsWith(prefix + 'image')) {
+      client.user.setAvatar(argresult);
+        message.channel.sendMessage(`**${argresult}** : The bot image has been changed`);
+    
+    }
+    });
 
 client.on('message', fkk => {
     if (fkk.content == "^fkk") {
