@@ -1365,29 +1365,7 @@ client.on('message', message => {
   }  
  });
  
-client.on('message', message => {
-    if (message.content.includes('discord.gg')){
-                        if(!message.channel.guild) return message.reply ('')
-                    if (!message.member.hasPermissions(['MANAGE_MESSAGES'])){
-       message.channel.send('ban <@' + message.author.id + '>')
-       message.delete() 
-       }
-    }
-          if (message.content.startsWith("ban")) {
-             if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply();
-             var member= message.mentions.members.first();
-             member.ban().then((member) => {
-                 message.channel.sendMessage("", {embed: {
-                 author: {
-                 },
-                 title: 'بسبب النشر ' + member.displayName + ' تم حظر',
-                 color: 490101,
-                 }
-               });
-           }
-         ) 
-       }
-   });
+
  
 
 
@@ -1416,7 +1394,7 @@ client.on('message', function(message) {
     const embed500 = new Discord.RichEmbed()
       .setTitle(":x: | تمت معاقبتك")
             .addField(`** لقد قمت بمخالفة قوانين السيرفر من خلال نشر سيرفرات اخرى  **` , `**ملاحظة  : إن كآن هذآ الميوت عن طريق الخطأ تكلم مع الادآرة**`)
-      .addField(`by`,`shyboy_05`)
+      .addField(`by`,`Dream`)
             .setColor("c91616")
             .setThumbnail(`${message.author.avatarURL}`)
             .setAuthor(message.author.username, message.author.avatarURL) 
